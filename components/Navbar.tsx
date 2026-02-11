@@ -7,7 +7,7 @@ export default function Navbar() {
         <nav className="w-full shadow-[0_2px_4px_-2px_rgba(0,0,0,0.12)]">
             <div className="w-full max-w-270 h-16 flex justify-center items-center relative p-4 mx-auto">
                 <div className="flex justify-center items-center">
-                    <h1 className="text-4xl font-serif">babblr.</h1>
+                    <Link href='/'><h1 className="text-4xl font-serif">babblr.</h1></Link>
                 </div>
                 <div className="md:flex hidden justify-center items-center absolute right-0 p-4 gap-2 text-accent">
                     <Link href="/">Blogs</Link>

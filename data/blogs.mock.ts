@@ -52,7 +52,7 @@ export const blogs: Blog[] = [
     slug: "building-consistency",
     title: "Building Consistency Without Burning Out",
     category: "sports-and-fitness",
-    image: "/assets/blogs/consistencyTwo.jpg",
+    image: "/assets/blogs/imageFive.jpg",
     excerpt:
       "Consistency isn’t about intensity. It’s about showing up even when motivation is gone.",
     body: "Full blog content goes here...",
@@ -63,7 +63,7 @@ export const blogs: Blog[] = [
     slug: "thinking-in-public",
     title: "Thinking in Public as a Developer",
     category: "tech-and-games",
-    image: "/assets/blogs/thinking-publicTwo.jpg",
+    image: "/assets/blogs/imageSix.jpg",
     excerpt:
       "Writing is how I slow down my thinking and sharpen my decisions.",
     body: "Full blog content goes here...",
@@ -74,7 +74,7 @@ export const blogs: Blog[] = [
     slug: "simple-food-rituals",
     title: "Simple Food Rituals That Ground My Day",
     category: "food-and-life",
-    image: "/assets/blogs/food-ritualsTwo.jpg",
+    image: "/assets/blogs/imageSeven.jpg",
     excerpt:
       "Small food rituals can turn chaos into something human again.",
     body: "Full blog content goes here...",
@@ -85,7 +85,7 @@ export const blogs: Blog[] = [
     slug: "training-with-intent",
     title: "Training With Intent, Not Ego",
     category: "sports-and-fitness",
-    image: "/assets/blogs/training-intentTwo.jpg",
+    image: "/assets/blogs/imageEigth.jpg",
     excerpt:
       "Progress comes faster when you stop trying to impress anyone.",
     body: "Full blog content goes here...",

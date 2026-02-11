@@ -10,6 +10,7 @@ import Image from "next/image";
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
 import type { Blog } from '@/types/blog'
+import Link from "next/link";
 
 type BlogCardProps = {
     blog: Blog
@@ -30,14 +31,14 @@ export function BlogCard ({blog}: BlogCardProps) {
             <CardAction className="self-start">
             <Badge variant="secondary" className="bg-accent text-white">{blog.category}</Badge>
             </CardAction>
-            <CardTitle className="w-full text-foreground">{blog.title}</CardTitle>
+            <CardTitle className="w-full text-foreground font-bold">{blog.title}</CardTitle>
             <CardDescription className="w-full">
             <p>{blog.excerpt}</p>
             <p className="mt-1 text-xs text-muted-foreground">{blog.datePublished}</p>
             </CardDescription>
         </CardHeader>
         <CardFooter>
-            <Button className="w-full bg-foreground hover:bg-accent">Read Blog</Button>
+            <Link href={`/blogs/${blog.slug}`} className="w-full bg-foreground hover:bg-accent rounded-lg text-center text-sm py-1 text-primary-foreground">Read Blog</Link>
         </CardFooter>
         </Card>
     )
