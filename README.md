@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+babblr. (pronounced: babbler)
 
-## Getting Started
+Welcome to Babbler — my personal corner on the internet. Here, I share my thoughts on tech, fitness, life, and everything in between. It’s also a space where I document my projects, experiments, and future ideas.
 
-First, run the development server:
+This blog is as much for me as it is for anyone curious about the things I’m exploring. Whether it’s a new workout routine, a programming project, or a life lesson, Babbler is where I put it all down in one place.
 
-```bash
+Why babblr?
+
+I wanted a place to write, reflect, and track my journey. The goal is simple: share, learn, and grow — while also keeping a record of projects and ideas that I can look back on later.
+
+What You’ll Find Here
+
+Personal essays on tech, fitness, and life
+
+Updates and insights on current and future projects
+
+Tips, experiments, and lessons learned along the way
+
+Running Babbler Locally
+
+If you’re curious about how Babbler works under the hood, you can run it locally:
+
+# Install dependencies
+npm install
+
+# Run the development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000
+ to see it in action.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Tech Stack
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Next.js 13 – for building a fast, modern blog
 
-## Learn More
+TypeScript – for safer, cleaner code
 
-To learn more about Next.js, take a look at the following resources:
+Tailwind CSS & Shadcn UI – for styling and components
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+MongoDB (optional) – if storing posts dynamically in the future
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Future Plans
 
-## Deploy on Vercel
+Add search and filtering for posts
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Enable commenting and interaction
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Showcase projects with live demos
+
+Continuously improve the blog design and UX
