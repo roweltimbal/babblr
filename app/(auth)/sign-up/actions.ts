@@ -1,3 +1,4 @@
+"use server"
 import { signUpUser } from "@/lib/auth/auth-service";
 import { signUpSchema } from "@/lib/auth/schema";
 
@@ -28,6 +29,8 @@ export default async function signUp(
 
    const result = await signUpUser(validatedFormData.data)
     //TODO: Create session here using the result
-    console.log(result)
+    if(result.error) {
+        return {error: result.error}
+    }
     return null;
 }
