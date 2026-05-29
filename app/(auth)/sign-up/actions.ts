@@ -1,6 +1,8 @@
 "use server"
 import { signUpUser } from "@/lib/auth/auth-service";
 import { signUpSchema } from "@/lib/auth/schema";
+import { createUserSession } from "@/lib/auth/session"
+import { redirect } from "next/navigation";
 
 export default async function signUp(
     prevState: any,
@@ -28,9 +30,16 @@ export default async function signUp(
    }
 
    const result = await signUpUser(validatedFormData.data)
-    //TODO: Create session here using the result
+    
     if(result.error) {
         return {error: result.error}
     }
-    return null;
+
+    //TODO: Create session here using the result
+    const userObject = {
+        id: result.user!._id.toString(),
+    }
+    await createUserSession(userObject)
+
+    redirect("/")
 }
