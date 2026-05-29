@@ -28,11 +28,20 @@ export async function signUpUser(userObject: SignUpSchema) {
         role: "user"
     }
    
-        await db.collection("users").insertOne(newUser)
+      const response =  await db.collection("users").insertOne(newUser)
+      return {
+        message: "user created",
+        user: {
+            _id: response.insertedId,
+            role: newUser.role
+        }
+      }
+      
     } catch (error) {
         console.dir(error, { depth: null })
-        return {error: "Error occured in sign up"}
     }
 
-    return {message: "User Created"}
+    return {
+        error: "Error occurred in sign up",
+    }
 }
