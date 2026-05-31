@@ -1,6 +1,6 @@
-import { SignUpSchema } from "./schema"
+import { SignUpSchema, SignInSchema } from "./schema"
 import clientPromise from "../db"
-import { hashPassword } from "./password";
+import { hashPassword, comparePasswords } from "./password";
 
 
 export async function signUpUser(userObject: SignUpSchema) {
@@ -43,5 +43,49 @@ export async function signUpUser(userObject: SignUpSchema) {
 
     return {
         error: "Error occurred in sign up",
+    }
+}
+
+export async function signInUser(userObject: SignInSchema) {
+    try {
+        // connect to the db
+        const client = await clientPromise;
+        const db = client.db("babblr")
+
+        const {email, password} = userObject;
+
+        // Check if email exists
+        const user = await db.collection("users").findOne({email: email});
+        if(!user) {
+            return {
+                error: "Email or Password doesn't match"
+            }
+        }
+
+        // compare input password with db's document hashedpassword
+        const userId = user._id;
+        const {hashedpassword, salt, role} = user;
+        const passwordCheck = comparePasswords(hashedpassword, salt, password);
+        if(!passwordCheck) {
+            return {
+                error: "Email or Password doesn't match"
+            }
+        }
+
+        // return userId and role
+        return {
+            message: "user signed in",
+            user: {
+                userId,
+                role
+            }
+        }
+
+    } catch (error) {
+        console.dir(error, {depth: null})
+    }
+
+    return {
+        error: "Error occrued while signing in"
     }
 }

@@ -9,3 +9,11 @@ export const signUpSchema = z.object({
 });
 
 export type SignUpSchema = z.infer<typeof signUpSchema>;
+
+// We will get from the form: email, password
+export const signInSchema = z.object({
+    email: z.email(),
+    password: z.string().min(8)
+})
+
+export type SignInSchema = z.infer<typeof signInSchema>;
