@@ -10,3 +10,12 @@ export function hashPassword(password: string) {
         hashedpassword
     }
 }
+
+export function comparePasswords (hashedpassword: string, salt: string, passwordInput: string) {
+    const comparedHashedPassword = scryptSync(passwordInput, salt, 64).toString("hex");
+    if(comparedHashedPassword === hashedpassword) {
+        return true
+    } else {
+        return false
+    }
+}

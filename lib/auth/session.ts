@@ -54,3 +54,23 @@ export async function createUserSession(user: {id: string}) {
     })
 
 }
+
+// remove user from session - for sign out
+
+export async function removeUserFromSession () {
+    const cookieStore = await cookies()
+    const sessionId = cookieStore.get(COOKIE_SESSION_KEY);
+    if(sessionId === null) return null;
+
+    // deleting seesion in redis
+    await redis.del(`session:${sessionId?.value}`);
+
+    // deleting cookies
+    cookieStore.delete(COOKIE_SESSION_KEY)
+}
+
+// logout function
+
+export async function logOut() {
+    await removeUserFromSession();
+}
