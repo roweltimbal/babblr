@@ -1,7 +1,13 @@
 import { SignUpSchema, SignInSchema } from "./schema"
 import clientPromise from "../db"
 import { hashPassword, comparePasswords } from "./password";
+import { cookies } from "next/headers";
+import { redis } from "@/lib/redis/redis";
 
+type Session = {
+    userId: string,
+    role: "admin" | "user"
+}
 
 export async function signUpUser(userObject: SignUpSchema) {
      try {
@@ -88,4 +94,17 @@ export async function signInUser(userObject: SignInSchema) {
     return {
         error: "Error occrued while signing in"
     }
+}
+
+// Session / Role Validation Function
+export async function validateSession() {
+    const cookieStore = await cookies();
+    const sessionCookie = cookieStore.get("session-id");
+
+    if(!sessionCookie) {
+        return null
+    }
+    const session = await redis.get<Session>(`session:${sessionCookie.value}`)
+
+    return session
 }
