@@ -4,6 +4,7 @@ import { LatestPostContainer } from "@/components/LatestPostContainer";
 // import { blogs } from "@/data/blogs.mock";
 import clientPromise from "@/lib/db"
 import type { BlogDB } from "@/types/blog";
+import { Mail } from "lucide-react";
 
 
 export default async function Home() {
@@ -29,6 +30,14 @@ export default async function Home() {
         <h1 className="text-2xl mb-4">Latest Posts</h1>
         <LatestPostContainer blogs={blogs}/>
       </section>
+      <footer className="mt-16 py-12 border-t border-border flex flex-col items-center gap-3">
+        <h2 className="font-serif font-bold text-5xl">babblr.</h2>
+        <div className="flex items-center gap-2 text-muted-foreground">
+          <Mail className="w-4 h-4" />
+          <span className="text-sm">rowel_babblr@gmail.com</span>
+        </div>
+        <p className="text-xs text-muted-foreground">©2026 babblr. All rights reserved.</p>
+      </footer>
     </main>
   );
 }
