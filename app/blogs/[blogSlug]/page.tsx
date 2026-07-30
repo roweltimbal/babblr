@@ -22,7 +22,6 @@ export default async function BlogPage ({params}: BlogParams) {
         _id: blog?._id.toString(),
         datePublished: blog?.datePublished.toLocaleDateString("en-US")
     }
-    console.log(selectedBlog)
     return(
         <section>
             <div className="max-w-4xl mx-auto px-4 py-10">
