@@ -33,6 +33,11 @@ export default function SignInPage() {
           </Button>
                     </div>
                 </form>
+                <div className="mt-6 rounded bg-green-500/10 border border-green-500/30 p-3 text-sm text-center">
+                    <p className="font-medium">Demo credentials</p>
+                    <p>Username: demo@gmail.com</p>
+                    <p>Password: Demopass</p>
+                </div>
             </div>
         </section>
     )

@@ -30,7 +30,7 @@ export default function AddBlog() {
                     </div>
                     <div className="flex flex-col gap-2">
                         <label className="text-sm font-medium">category</label>
-                        <p className="text-sm text-accent">options: sports and fitness, tech and games, food and life</p>
+                        <p className="text-sm text-accent">options: sports-and-fitness, tech-and-games, food-and-life</p>
                         <Input name="category" type="text" placeholder=""/>
                     </div>
                     <div className="flex flex-col gap-2">
