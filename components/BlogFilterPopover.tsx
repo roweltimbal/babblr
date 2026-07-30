@@ -1,5 +1,5 @@
 'use client'
-import { useState } from "react"
+import { useRouter, useSearchParams } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Label } from "@/components/ui/label"
@@ -16,14 +16,22 @@ const categories = [
 ]
 
 export function CategoryFilter() {
-  const [selected, setSelected] = useState<string[]>([])
+  const router = useRouter()
+  const searchParams = useSearchParams()
+  const selected = searchParams.get("category")?.split(",").filter(Boolean) ?? []
 
   const toggle = (id: string) => {
-    setSelected((prev) =>
-      prev.includes(id)
-        ? prev.filter((c) => c !== id)
-        : [...prev, id]
-    )
+    const next = selected.includes(id)
+      ? selected.filter((c) => c !== id)
+      : [...selected, id]
+
+    const newParams = new URLSearchParams(searchParams.toString())
+    if (next.length > 0) {
+      newParams.set("category", next.join(","))
+    } else {
+      newParams.delete("category")
+    }
+    router.push(`?${newParams.toString()}`)
   }
 
   return (

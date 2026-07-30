@@ -11,8 +11,13 @@ type AllBlogPostsProps = {
 export function AllBlogPostContainer ({blogs}: AllBlogPostsProps) {
     const searchParams = useSearchParams();
     const searchKeyword = searchParams?.get('search') || '';
-    const filteredBlogs = blogs.filter(blog => blog.title.toLowerCase().includes(searchKeyword))
-    console.log(filteredBlogs)
+    const selectedCategories = searchParams?.get('category')?.split(',').filter(Boolean) ?? [];
+
+    const filteredBlogs = blogs.filter(blog => {
+        const matchesSearch = blog.title.toLowerCase().includes(searchKeyword);
+        const matchesCategory = selectedCategories.length === 0 || selectedCategories.includes(blog.category);
+        return matchesSearch && matchesCategory;
+    })
 
     return(
         <div className="w-full">
