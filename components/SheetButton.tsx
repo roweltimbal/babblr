@@ -1,12 +1,7 @@
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
 import {
   Sheet,
-  SheetClose,
   SheetContent,
-  SheetDescription,
-  SheetFooter,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
@@ -14,8 +9,13 @@ import {
 import Link from "next/link"
 import { Menu } from "lucide-react"
 import { ModeToggle } from "./darkmodeToggler"
+import { logOut } from "@/lib/auth/session"
 
-export function SheetButton() {
+type SheetButtonProps = {
+  isSignedIn: boolean
+}
+
+export function SheetButton({ isSignedIn }: SheetButtonProps) {
   return (
     <Sheet>
       <SheetTrigger asChild>
@@ -29,6 +29,13 @@ export function SheetButton() {
             <ModeToggle/>
             <Link href="/">Blogs</Link>
             <Link href="/">Contact us</Link>
+            {isSignedIn ? (
+                <form action={logOut}>
+                    <button type="submit" className="cursor-pointer">Sign out</button>
+                </form>
+            ) : (
+                <Link href="/sign-in">Sign in</Link>
+            )}
         </nav>
       </SheetContent>
     </Sheet>

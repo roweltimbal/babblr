@@ -35,7 +35,6 @@ export default async function signUp(
         return {error: result.error}
     }
 
-    //TODO: Create session here using the result
     const userObject = {
         id: result.user!._id.toString(),
     }

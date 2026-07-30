@@ -12,7 +12,6 @@ export function AllBlogPostContainer ({blogs}: AllBlogPostsProps) {
     const searchParams = useSearchParams();
     const searchKeyword = searchParams?.get('search') || '';
     const filteredBlogs = blogs.filter(blog => blog.title.toLowerCase().includes(searchKeyword))
-    console.log(filteredBlogs)
 
     return(
         <div className="w-full">
