@@ -1,5 +1,4 @@
 import { AllBlogPostContainer } from "@/components/AllBlogPostsContainer"
-// import { blogs } from "@/data/blogs.mock"
 import clientPromise from "@/lib/db"
 import type { BlogDB } from "@/types/blog";
 

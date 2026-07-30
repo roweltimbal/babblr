@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { LatestPostContainer } from "@/components/LatestPostContainer";
-// import { blogs } from "@/data/blogs.mock";
 import clientPromise from "@/lib/db"
 import type { BlogDB } from "@/types/blog";
 import { Mail } from "lucide-react";

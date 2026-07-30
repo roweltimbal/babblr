@@ -1,4 +1,3 @@
-// import { blogs } from "@/data/blogs.mock"
 import clientPromise from "@/lib/db"
 import type {BlogDB} from "@/types/blog"
 import Image from "next/image";
