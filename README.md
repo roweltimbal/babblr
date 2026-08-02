@@ -1,50 +1,114 @@
-babblr. (pronounced: babbler)
+# 📝 Babblr
 
-Welcome to Babbler — my personal corner on the internet. Here, I share my thoughts on tech, fitness, life, and everything in between. It’s also a space where I document my projects, experiments, and future ideas.
+A modern full-stack blogging platform built with Next.js and TypeScript that allows users to create, publish, and manage content through a clean and responsive interface.
 
-This blog is as much for me as it is for anyone curious about the things I’m exploring. Whether it’s a new workout routine, a programming project, or a life lesson, Babbler is where I put it all down in one place.
+**🌐 Live Demo:** https://babblr-two.vercel.app
 
-Why babblr?
+---
 
-I wanted a place to write, reflect, and track my journey. The goal is simple: share, learn, and grow — while also keeping a record of projects and ideas that I can look back on later.
+## Overview
 
-What You’ll Find Here
+Babblr was built to explore the architecture behind modern content management systems while creating an enjoyable writing experience. The application focuses on responsive design, authentication, and scalable content management using a full-stack JavaScript ecosystem.
 
-Personal essays on tech, fitness, and life
+---
 
-Updates and insights on current and future projects
+## Features
 
-Tips, experiments, and lessons learned along the way
+- ✍️ Create, edit, and manage blog posts
+- 🔐 User authentication
+- 📱 Responsive design
+- ⚡ Server-side rendering with Next.js
+- 🎨 Modern UI built with Tailwind CSS and shadcn/ui
+- 🗂 Organized content management
 
-Running Babbler Locally
+---
 
-If you’re curious about how Babbler works under the hood, you can run it locally:
+## Tech Stack
 
-# Install dependencies
+### Frontend
+
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+- shadcn/ui
+
+### Backend
+
+- Next.js API Routes
+- MongoDB
+
+### Deployment
+
+- Vercel
+
+---
+
+## My Responsibilities
+
+As the sole developer, I was responsible for:
+
+- UI / UX Design
+- Frontend Development
+- Backend Development
+- Database Design
+- Authentication
+- Deployment
+
+---
+
+## What I Learned
+
+Building Babblr helped me deepen my understanding of full-stack application development, authentication, database integration, and component-based architecture using the Next.js App Router.
+
+It also reinforced the importance of creating intuitive user experiences while keeping the application scalable and maintainable.
+
+---
+
+## Future Improvements
+
+- Full-text search
+- Categories and tags
+- Rich text editor
+- Comment system
+- User profiles
+- Drafts and scheduled publishing
+- Markdown support
+- Image uploads
+
+---
+
+## Getting Started
+
+Clone the repository
+
+```bash
+git clone https://github.com/roweltimbal/babblr.git
+```
+
+Install dependencies
+
+```bash
 npm install
+```
 
-# Run the development server
+Run the development server
+
+```bash
 npm run dev
+```
 
 Open http://localhost:3000
- to see it in action.
 
-Tech Stack
+---
 
-Next.js 13 – for building a fast, modern blog
 
-TypeScript – for safer, cleaner code
+## Author
 
-Tailwind CSS & Shadcn UI – for styling and components
+**Rowel Timbal**
 
-MongoDB (optional) – if storing posts dynamically in the future
+Portfolio: https://rowel-portfolio.vercel.app/
 
-Future Plans
+LinkedIn: https://www.linkedin.com/in/rowel-timbal-789b03109/
 
-Add search and filtering for posts
-
-Enable commenting and interaction
-
-Showcase projects with live demos
-
-Continuously improve the blog design and UX
+GitHub: https://github.com/roweltimbal
